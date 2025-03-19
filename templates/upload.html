@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Recycler - Upload{% endblock %}
+
+{% block content %}
+<section class="upload-header">
+    <h1>Upload Image for Classification</h1>
+    <p>Our AI will identify what type of recyclable material you have.</p>
+</section>
+
+<section class="upload-container">
+    <div class="upload-form">
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+            <div class="file-input-wrapper">
+                <label for="file-upload" class="custom-file-upload">
+                    <img src="{{ url_for('static', filename='images/upload-icon.svg') }}" alt="Upload">
+                    <span>Choose file or drag here</span>
+                </label>
+                <input id="file-upload" type="file" name="file" accept="image/*">
+            </div>
+            <div class="preview-container">
+                <div class="image-preview">
+                    <!-- Image preview will appear here -->
+                </div>
+            </div>
+            <button type="submit" class="btn primary">Classify Now</button>
+        </form>
+    </div>
+
+    <div class="classification-result">
+        <h2>Classification Result</h2>
+        <div class="result-placeholder">
+            <!-- Results will appear here after classification -->
+            <p>Upload an image to see the classification results</p>
+        </div>
+    </div>
+</section>
+
+<section class="classification-tips">
+    <h2>Tips for Better Classifications</h2>
+    <ul>
+        <li>Ensure the item is clearly visible in the image</li>
+        <li>Use good lighting to improve accuracy</li>
+        <li>Clean the item before taking a photo</li>
+        <li>Position the camera to show identifying features</li>
+    </ul>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Recycler - Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Recycle today.<br>Make a difference.</h1>
+        <p>Recycling made easy.<br>We help identify recyclables through AI-based vision, and we'll help.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('upload') }}" class="btn primary">Get Recycling</a>
+            <a href="#" class="btn secondary">Discover</a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <!-- Image will be added via CSS background or as an img tag -->
+    </div>
+</section>
+
+<section class="categories">
+    <h2>Recycle Categories</h2>
+    <div class="category-circles">
+        <div class="category-item">
+            <div class="circle" id="e-waste"></div>
+            <p>E-Waste</p>
+        </div>
+        <div class="category-item">
+            <div class="circle" id="metal"></div>
+            <p>Metal</p>
+        </div>
+        <div class="category-item">
+            <div class="circle" id="paper"></div>
+            <p>Paper</p>
+        </div>
+        <div class="category-item">
+            <div class="circle" id="plastic"></div>
+            <p>Plastic</p>
+        </div>
+        <div class="category-item">
+            <div class="circle" id="glass"></div>
+            <p>Glass</p>
+        </div>
+        <div class="category-item">
+            <div class="circle" id="fabric"></div>
+            <p>Fabric</p>
+        </div>
+    </div>
+</section>
+
+<section class="recycling-insights">
+    <h2>Recycling Insights</h2>
+    <div class="insights-preview">
+        <p>Check out our dashboard for live recycling statistics and insights.</p>
+        <a href="{{ url_for('dashboard') }}" class="btn primary">View Dashboard</a>
+    </div>
+</section>
+{% endblock %}
